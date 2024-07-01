@@ -1,0 +1,26 @@
+//returns true if there are 3 consequtive odd numbers in an array
+fun threeConsecutiveOdds(arr: IntArray): Boolean {
+
+       if(arr.size < 3) {
+        return false;
+       }
+
+       var numOddsInARow = 0
+
+       for (num in arr) {
+
+        if(num.isOdd()) {
+            numOddsInARow ++;
+            if(numOddsInARow == 3) {
+                return true
+            }
+        }
+        else {
+            numOddsInArow = 0;
+        }
+       }
+
+       return false
+    }
+
+    fun isOdd(num: Int):Boolean = num % 2 == 1
